@@ -14,7 +14,8 @@ namespace MG.MDV
         protected override void Write( RendererMarkdown renderer, EmphasisInline node )
         {
             bool prev = false;
-
+            
+            #pragma warning disable 618
             if( node.IsDouble )
             {
                 prev = renderer.Style.Bold;
@@ -36,6 +37,7 @@ namespace MG.MDV
             {
                 renderer.Style.Italic = prev;
             }
+            #pragma warning restore 618
         }
     }
 }
